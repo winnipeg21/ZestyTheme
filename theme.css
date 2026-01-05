@@ -4218,7 +4218,6 @@ imgLogoIcon {
 
 .guideHeaderDateSelection { /* Changes the date selection to have a dark background */
 	margin-top: 2em;
-    background-color: #1e1e1e !important;
     width: 100%;
 }
 
@@ -4235,8 +4234,8 @@ imgLogoIcon {
 }
 
 
-/* .guideHeaderDateSelection .emby-tab-button-active { /* Changes the date selection active button to a darker color */
-/*    background-color: rgb(var(--dark-highlight)) !important;
-} */
+.guideHeaderDateSelection .emby-tab-button-active { /* Changes the date selection active button to a darker color */
+    background-color: rgb(var(--dark-highlight)) !important;
+} 
 
 
