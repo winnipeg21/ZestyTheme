@@ -4226,6 +4226,15 @@ imgLogoIcon {
 	color: rgb(var(--white));
 }
 
+.guideProgramNameText {
+	font-weight: 600;
+}
+
+.guideProgramSecondaryInfo {
+	font-weight: 300;
+}
+
+
 /* .guideHeaderDateSelection .emby-tab-button-active { /* Changes the date selection active button to a darker color */
 /*    background-color: rgb(var(--dark-highlight)) !important;
 } */
