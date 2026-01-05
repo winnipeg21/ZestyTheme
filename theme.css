@@ -4226,12 +4226,8 @@ imgLogoIcon {
 	color: rgb(var(--white));
 }
 
-.guideHeaderDateSelection .emby-tab-button-active { /* Changes the date selection active button to a darker color */
-    background-color: rgb(var(--dark-highlight)) !important;
-}
+/* .guideHeaderDateSelection .emby-tab-button-active { /* Changes the date selection active button to a darker color */
+/*    background-color: rgb(var(--dark-highlight)) !important;
+} */
 
-(min-width: 62.5em) { /* JF/Emby decided the LiveTV section needs a .5em left padding. I don't */
-    #guideTab {
-        padding-left: 0em;
-    }
-}
+
