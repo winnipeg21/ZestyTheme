@@ -4326,7 +4326,7 @@ imgLogoIcon {
 
   padding: 0 12px;
 
-  border-right: 5px solid var(--dark-apparent);
+  border-right: 5px solid rgba(var(--dark-apparent));
   background-color: transparent;
 }
 
@@ -4376,11 +4376,11 @@ display: inline-flex;
 }
 
 .programCell-active {
-	background: linear-gradient(90deg,rgba(37, 171, 85, 1) 0%, rgba(23, 29, 32, 1) 90%); !important
+	background: linear-gradient(90deg,rgba(20, 82, 110, 1) 0%, rgba(23, 29, 32, 1) 90%) !important;
 }
 
 .channelPrograms, .guide-channelHeaderCell, .programCell { /* My attempt to creat a defaco padding around the program boxes. */
-	border-color: var(--dark-apparent); !important
+	border-color: rgba(var(--dark-apparent)) !important;
 }
 
 .programCell {
