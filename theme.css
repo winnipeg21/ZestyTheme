@@ -4233,9 +4233,150 @@ imgLogoIcon {
 	font-weight: 300;
 }
 
-
 .guideHeaderDateSelection .emby-tab-button-active { /* Changes the date selection active button to a darker color */
     background-color: rgb(var(--dark-highlight)) !important;
 } 
+
+/* Start of AI solving first world problems (LiveTV Alignment)  */
+
+:root {
+  --guide-row-height: 64px;
+
+  --row-odd: rgb(var(--darkest));
+  --row-even: rgb(var(--dark-apparent));
+  --row-hover: #353535;
+
+  --row-divider: rgba(255,255,255,0.06);
+  --cell-divider: rgba(255,255,255,0.05);
+}
+
+/* =====================================================
+   LEFT COLUMN (CHANNEL ROWS)
+   ===================================================== */
+
+.channelsContainer .guide-channelHeaderCell {
+  height: var(--guide-row-height);
+  min-height: var(--guide-row-height);
+  max-height: var(--guide-row-height);
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--row-divider);
+}
+
+.channelsContainer .guide-channelHeaderCell:nth-child(odd) { background-color: var(--row-odd); }
+.channelsContainer .guide-channelHeaderCell:nth-child(even) { background-color: var(--row-even); }
+
+.channelsContainer .guide-channelHeaderCell:hover { background-color: var(--row-hover); }
+
+.channelsContainer .guideChannelImage {
+  height: calc(var(--guide-row-height) - 14px);
+  width: 90px;
+  flex: 0 0 auto;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.channelsContainer .guideChannelNumber {
+  margin: 0;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* =====================================================
+   RIGHT COLUMN (PROGRAM GRID ROWS)
+   Each .channelPrograms is one full row.
+   ===================================================== */
+
+.programGrid .channelPrograms {
+  height: var(--guide-row-height);
+  min-height: var(--guide-row-height);
+  max-height: var(--guide-row-height);
+
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--row-divider);
+}
+
+.programGrid .channelPrograms:nth-child(odd) { background-color: var(--row-odd); }
+.programGrid .channelPrograms:nth-child(even) { background-color: var(--row-even); }
+
+/* Each program block inside the row */
+.programGrid .channelPrograms > button.programCell {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  /* Center content vertically like the stock guide */
+  display: flex;
+  align-items: center;
+
+  padding: 0 12px;
+
+  border-right: 1px solid var(--cell-divider);
+  background-color: transparent;
+}
+
+.programGrid .channelPrograms > button.programCell:hover {
+  background-color: var(--row-hover);
+}
+
+/* =====================================================
+   PROGRAM TEXT FIX
+   Let title be up to 2 lines, secondary be 1 line.
+   This stops the "text looks off" problem.
+   ===================================================== */
+
+/* This wrapper should fill the cell and center nicely */
+.programGrid .channelPrograms > button.programCell .guideProgramName {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Title area: allow wrapping, clamp to 2 lines */
+.programGrid .channelPrograms > button.programCell .guideProgramNameText {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  white-space: normal;
+  overflow: hidden;
+
+  line-height: 1.15;
+}
+
+/* Secondary info: single line with ellipsis */
+.programGrid .channelPrograms > button.programCell .guideProgramSecondaryInfo,
+.programGrid .channelPrograms > button.programCell .programSecondaryTitle {
+  display: block;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.15;
+  margin-top: 2px;
+}
+
+button.emby-tab-button:nth-child(3) {
+display: inline-flex;
+}
+
+.programCell-active {
+	background: linear-gradient(90deg,rgba(111, 130, 138, 1) 0%, rgba(23, 29, 32, 1) 90%);
+}
 
 
