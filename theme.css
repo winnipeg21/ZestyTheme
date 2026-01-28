@@ -4306,10 +4306,8 @@ imgLogoIcon {
   overflow: hidden;
 
   border-bottom: 1px solid var(--row-divider);
+  border-radius: 10px;
 }
-
-.programGrid .channelPrograms:nth-child(odd) { background-color: var(--row-odd); }
-.programGrid .channelPrograms:nth-child(even) { background-color: var(--row-even); }
 
 /* Each program block inside the row */
 .programGrid .channelPrograms > button.programCell {
@@ -4383,6 +4381,28 @@ display: inline-flex;
 	border-color: rgba(var(--dark-apparent)) !important;
 }
 
+/* Makes the "inactive" or upcoming shows a lighter colour. Also adds a corner radius to create a pill effect. */
 .programCell {
-	border-width: 2.5px 2.5px 2.5px 0px;
+    border-radius: 10px;
+    border-width: 4px 4px 4px 0px;
+    background-color: var(--inactive) !important;
+}
+
+/* The hover of the above idea is maybe to change it up later. That's why most of the cost is copied. */
+.programCell:hover {
+    border-radius: 10px;
+    border-width: 4px 4px 4px 0px;
+    background-color: var(--accent) !important;
+}
+
+/* Channel left side headers needed some love. */
+.guide-channelHeaderCell {
+    background-color: rgb(var(--darkest), .9) !important;
+    border-radius: 10px;
+    border-width: 4px 4px 4px 4px;
+}
+
+/* Adds a gap before the channels and programs. */
+.channelsContainer, .programGrid {
+    margin-left: 10px;
 }
